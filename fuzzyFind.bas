@@ -4,7 +4,7 @@
 'recieves input of query (ex. "foo"), searchRange (ex. "A1:B5") and searchSheet (ex. "Sheet 1") as string
 'outputs the closest match to the query text as a string
 
-Function FuzzyFind(query As String, searchRange As String, searchSheet As String) As String
+Function fuzzyFind(query As String, searchRange As String, searchSheet As String) As String
 
         'dimension variables
         Dim ws As Worksheet: Set ws = ThisWorkbook.Sheets(searchSheet)
@@ -67,5 +67,5 @@ Function FuzzyFind(query As String, searchRange As String, searchSheet As String
         Next cell
         
         'return the value of the top scoring cell
-        FuzzyFind = topScoringCell.Value
+        fuzzyFind = topScoringCell.Value
 End Function
