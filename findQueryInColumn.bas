@@ -1,6 +1,8 @@
 '''''''''''''''''''''''''''''''''''''''''''''''
 ' Find A Query In Column                      '
 '''''''''''''''''''''''''''''''''''''''''''''''
+' *** Requires Function "getColumnLetter" ***
+
 'recieves input of worksheet (ex. "Sheet 1"), search term (ex. "foo"), and range (ex. "A:A") as string
 'outputs row number as integer
 
@@ -28,10 +30,10 @@ Function findQueryInColumn(searchWroksheet As String, searchTerm As Variant, sea
                 'dimension variables
 
                 'find the column letter of the search column
-                Dim searchColumnLetter As String: searchColumnLetter = common.Col_Letter(ws.range(searchColumn).Column)
+                Dim searchColumnLetter As String: searchColumnLetter = common.getColumnLetter(ws.range(searchColumn).Column)
 
                 'find the last row in the search column
-                Dim searchColumnLastRow As String: searchColumnLastRow = ws.range(common.Col_Letter(ws.range(searchColumn).Column) & Rows.count).End(xlUp).row
+                Dim searchColumnLastRow As String: searchColumnLastRow = ws.range(common.getColumnLetter(ws.range(searchColumn).Column) & Rows.count).End(xlUp).row
 
                 'find the last cell in the search column
                 Dim searchColumnLastCell As range: Set searchColumnLastCell = ws.range(searchColumnLetter & searchColumnLastRow)
@@ -45,14 +47,14 @@ Function findQueryInColumn(searchWroksheet As String, searchTerm As Variant, sea
                 For i = 1 To searchColumnLastCell.row
 
                         'convert to cell value to uppercase
-                        compare = UCase(CStr(ws.range(common.Col_Letter(CLng(Column)) & i).Value))
+                        compare = UCase(CStr(ws.range(common.getColumnLetter(CLng(Column)) & i).Value))
 
                         'convert search term to upper case
                         searchTerm = UCase(searchTerm)
 
                         'if current cell value is equal to the search term return current row
                         If compare = searchTerm Then
-                                findQueryInColumn = ws.range(common.Col_Letter(CLng(Column)) & i).row
+                                findQueryInColumn = ws.range(common.getColumnLetter(CLng(Column)) & i).row
                                 foundMatch = True
                                 Exit For
                         End If

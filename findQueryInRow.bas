@@ -1,6 +1,8 @@
 '''''''''''''''''''''''''''''''''''''''''''''''
 ' Find A Query In Row                         '
 '''''''''''''''''''''''''''''''''''''''''''''''
+' *** Requires Function "getColumnLetter" ***
+
 'recieves input of worksheet (ex. "Sheet 1"), search term (ex. "foo"), and range (ex. "1:1") as string
 'outputs column number as integer
 
@@ -28,7 +30,7 @@ Function findQueryInRow(searchWorksheet As String, searchTerm As Variant, search
                 'dimension variables
 
                 'find the column letter of the last column in the search row
-                Dim searchRowLastColumnLetter As String: searchRowLastColumnLetter = common.Col_Letter(ws.range(common.Col_Letter(Columns.count) & ws.range(searchRow).row).End(xlToLeft).Column)
+                Dim searchRowLastColumnLetter As String: searchRowLastColumnLetter = common.getColumnLetter(ws.range(common.getColumnLetter(Columns.count) & ws.range(searchRow).row).End(xlToLeft).Column)
 
                 'find the last row in the search search row
                 Dim searchRowLastRow As String: searchRowLastRow = ws.range(searchRow).row
@@ -45,14 +47,14 @@ Function findQueryInRow(searchWorksheet As String, searchTerm As Variant, search
                 For i = 1 To searchRowLastCell.Column
 
                         'convert to cell value to uppercase
-                        compare = UCase(CStr(ws.range(common.Col_Letter(CLng(i)) & row).Value))
+                        compare = UCase(CStr(ws.range(common.getColumnLetter(CLng(i)) & row).Value))
 
                         'convert search term to upper case
                         searchTerm = UCase(searchTerm)
 
                         'if current cell value is equal to the search term return current column
                         If compare = searchTerm Then
-                                findQueryInRow = ws.range(common.Col_Letter(CLng(i)) & row).Column
+                                findQueryInRow = ws.range(common.getColumnLetter(CLng(i)) & row).Column
                                 foundMatch = True
                                 Exit For
                         End If
