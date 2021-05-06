@@ -40,4 +40,4 @@ Sub generateRangeOfAvailablePrinters(destinationSheet As String, destinationColu
                 'copy current of printer array to destination
                 ws.range(common.getColumnLetter(common.findQueryInRow(destinationSheet, destinationColumnHeader, "1:1")) & i + 1).Value = printers(i)
         Next i
-End Function
+End Sub
