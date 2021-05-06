@@ -33,7 +33,7 @@ Converts range or named range to delimited lists.
 1. `String` Worksheet Name _(ex. "Sheet 1")_
 2. `String` Range Name _(ex. "A1:B5" or "clientNames")_
 3. `String` Delimiter _(ex. ";" or ", ")_
-<br>
+
 **Output**: `String` Delimited List (ex. "Hello, World,")
 
 <br>
