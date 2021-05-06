@@ -51,7 +51,6 @@ Finds queried value in a specified column and returns the row number where the q
 1. `String` Search Worksheet Name _(ex. "Sheet 1")_
 2. `String` Search Term _(ex. "foo")_
 3. `String` Search Column (ex. "A:A")
-<br>
 
 **Output**: `Integer` Row Number
 
