@@ -15,12 +15,16 @@ Encodes string to Base64.
 <br>
 **Output**: `String` encoded to base64
 
+<br>
+
 ## Binary To String
 Decodes binary to string. _2003 Antonin Foller, http://www.motobit.com_
 
 **Input**: `Variant` as bianary data (ex. VT_UI1 | VT_ARRAY)
 <br>
 **Output**: `String`
+
+<br>
 
 ## Convert Range To Delimited Lists
 Converts range or named range to delimited lists.
@@ -32,6 +36,8 @@ Converts range or named range to delimited lists.
 <br>
 **Output**: `String` Delimited List (ex. "Hello, World,")
 
+<br>
+
 ## Count Non-Blank Array Items
 Count the number of items in an array that contain a value.
 
@@ -39,12 +45,16 @@ Count the number of items in an array that contain a value.
 <br>
 **Output**: `Integer` (ex. 3)
 
+<br>
+
 ## Enable Events _(Sub-Routine)_
 Enable or disable events and screen updating on the application level.
 
 **Input**: `Boolean` Enable _(ex. True or False)_
 <br>
 **Output**: `None`
+
+<br>
 
 ## Find Query In Column
 Finds queried value in a specified column and returns the row number where the query is found.
@@ -56,6 +66,8 @@ Finds queried value in a specified column and returns the row number where the q
 
 **Output**: `Integer` Row Number
 
+<br>
+
 ## Find Query In Row
 Finds queried value in a specified row and returns the column number where the query is found.
 
@@ -65,6 +77,8 @@ Finds queried value in a specified row and returns the column number where the q
 3. `String` Search Row _(ex. "1:1")_
 
 **Output**: `Integer` Column Number
+
+<br>
 
 ## Fuzzy Find
 Finds closest match to queried value in specified range.
