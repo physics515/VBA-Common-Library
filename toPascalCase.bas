@@ -4,7 +4,7 @@
 'recieves an input of text (ex. "Hello World") as string
 'outputs string converted to pascal case (ex. "HelloWorld")
 
-Public Function toPascalCase(ByVal text As String) As String
+Function toPascalCase(ByVal text As String) As String
 
         'dimension variables
         Dim words() As String

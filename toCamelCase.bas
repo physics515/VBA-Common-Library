@@ -6,7 +6,7 @@
 
 ' *** Requires Function "toPascalCase" ***
 
-Public Function toCamelCase(ByVal text As String) As String
+Function toCamelCase(ByVal text As String) As String
 
         'dimension variables
         Dim result As String
