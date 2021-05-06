@@ -6,6 +6,8 @@ A library of common Excel VBA functions that I have found useful over the years.
 2. Copy the functions you need into the `common` module.
 3. Call functions by using `common.functionName`.
 
+<br>
+
 ## Base64 Encode
 Encodes string to Base64.
 
@@ -40,7 +42,7 @@ Count the number of items in an array that contain a value.
 ## Enable Events _(Sub-Routine)_
 Enable or disable events and screen updating on the application level.
 
-**Input**: `Boolean` Enable (ex. True or False)
+**Input**: `Boolean` Enable _(ex. True or False)_
 <br>
 **Output**: `None`
 
@@ -50,8 +52,26 @@ Finds queried value in a specified column and returns the row number where the q
 **Input**: 
 1. `String` Search Worksheet Name _(ex. "Sheet 1")_
 2. `String` Search Term _(ex. "foo")_
-3. `String` Search Column (ex. "A:A")
+3. `String` Search Column _(ex. "A:A")_
 
 **Output**: `Integer` Row Number
 
-## 
+## Find Query In Row
+Finds queried value in a specified row and returns the column number where the query is found.
+
+**Input**:
+1. `String` Search Worksheet Name _(ex. "Sheet 1")_
+2. `String` Search Term _(ex. "foo")_
+3. `String` Search Row _(ex. "1:1")_
+
+**Output**: `Integer` Column Number
+
+## Fuzzy Find
+Finds closest match to queried value in specified range.
+
+**Input**:
+1. `String` Query _(ex. "foo")_
+2. `String` Search Range _(ex. "A1:B5")_
+3. `String` Search Sheet Name _(ex. "Sheet 1")_
+
+**Output**: `String` Closest Matched Value
