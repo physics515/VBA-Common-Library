@@ -1,6 +1,8 @@
 # VBA-Common-Library
 A library of common Excel VBA functions that I have found useful over the years.
 
+<br>
+
 ## How to Use
 1. Create a module in excel called `common`. 
 2. Copy the functions you need into the `common` module.
@@ -80,7 +82,7 @@ Finds queried value in a specified row and returns the column number where the q
 
 <br>
 
-## Fuzzy Find
+## Fuzzy Find _(beta)_
 Finds closest match to queried value in specified range.
 
 **Input**:
@@ -89,3 +91,91 @@ Finds closest match to queried value in specified range.
 3. `String` Search Sheet Name _(ex. "Sheet 1")_
 
 **Output**: `String` Closest Matched Value
+
+<br>
+
+## Generate Range of Available Printers _(Sub-Routine)_
+Finds specified column header on specified sheet and enters a list of printers available on the network into the column below the header.
+
+**Input**:
+1. `String` Destination Sheet _(ex. "Sheet 1")_
+2. `String` Destination Column Header _(ex. "Printer List")_
+
+**Output**: `None`
+
+<br>
+
+## Get Column Letter
+Returns the column letter for specified column number.
+
+**Input**: `Long` Column Number
+<br>
+**Output**: `String` Column Letter
+
+<br>
+
+## Lock All Sheets _(Sub-Routine)_
+Locks or unlocks all sheets, unless a sheet is provided then only that sheet will be locked or unlocked.
+
+**Input**:
+1. `Boolean` Locked _(ex. `True` or `False`)_
+2. `Worksheet` Single Sheet
+
+**Output**: `None`
+
+<br>
+
+## One Digit Number to Text
+Converts any single-digit number to text.
+
+**Input**: `String` Digit _(ex. "5")_
+<br>
+**Output**: `String` Text _(ex. "Five")_
+
+<br>
+
+## Remove Duplicates
+Removes duplicate values from specified range.
+
+**Input**:
+1. `Worksheet` Origin Worksheet _(ex. `ThisWorkbook.Sheets("Sheet 1")`)_
+2. `Range` Origin Range _(ex. `ThisWorkbook.Sheets("Sheet 1").Range("A1:B5")`)_
+
+**Output**: `Scripting.Dictionary` of which the keys are the values from the range with the duplicates removed
+
+<br>
+
+## Remove Leading String
+Removes the specified leading string if it appears at the beginning of the whole string. You can determine the output to be text or an excel formula to achieve the same result.
+
+**Input**:
+1. `String` Leading string to be removed _(ex. "foo ")_
+2. `String` Whole string _(ex. "foo bar")_
+3. `Boolean`  Return Excel formula or text _(ex. `True` or `False`)_
+
+**Output**:
+1. `String` Text (ex. "bar")
+2. `String`Formula (ex. "IF(LEFT(" & `whole` & ",LEN("& `lead` &"))=""" & `lead` & """,RIGHT(" & `whole` & ",LEN(" & `whole` & ")-LEN(" & `lead` & ")), " & `whole` & ")")
+
+<br>
+
+## Save Object, Chart, or Shape as Image to Desktop _(Sub-Routine)_
+Takes any shape, chart, or other object and exports it to you desktop as a `PNG` file.
+
+**Input**:
+1. `String` Name of worksheet where the object resides
+2. `String` Name of object
+3. `String` File name of exported image
+
+**Output**: `None`
+
+<br>
+
+## Spell Number as Currency
+Takes a number and spells it out in words eg. `1` to "One".
+
+**Input**:
+1. `Variant` Number to Spell _(ex. `123.01`)_
+2. `String` Name of Currency _(ex. "Dollars")_
+
+**Output**: `String` Text _(ex. "One Hundred Twenty Three Dollars And One Cent")_
