@@ -124,6 +124,17 @@ Returns the column letter for specified column number.
 
 <br> 
 
+## HTTP Request
+Sends http POST or GET request and returns the response.
+
+**Input**:
+1. `String` URL _(ex. "https://api.insightly.com/v3.1/Contacts/")_
+2. `Boolean` Post _(ex. `True` or `False`)_  - Optional
+
+**Output**: `String` HTTP Response
+
+<br> 
+
 ## Lock All Sheets _(Sub-Routine)_
 Locks or unlocks all sheets, unless a sheet is provided then only that sheet will be locked or unlocked.
 
