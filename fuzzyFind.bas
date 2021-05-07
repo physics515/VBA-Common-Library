@@ -41,15 +41,17 @@ Function fuzzyFind(query As String, searchRange As String, searchSheet As String
                                                 End If
 
                                                 'allways return a non-zero distance
-                                                If distance = 0 Then
-                                                        distance = distance + 0.5
-                                                End If
+                                                ' If distance = 0 Then
+                                                '         distance = distance + 0.5
+                                                ' End If
 
                                                 'record the current found position as the previouly found position
                                                 foundPosition = j
 
                                                 'add distance to socre as a percentage matched, and round to 4 decimal places
-                                                currentScore = Round(Abs(currentScore + Round((1 / distance), 4)), 4)
+                                                If distance > 0 Then
+                                                        currentScore = Round(Abs(currentScore + Round((1 / distance), 4)), 4)
+                                                End If
                                         End If
                                 End If
                         Next j
