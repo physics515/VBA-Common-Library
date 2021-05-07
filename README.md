@@ -135,6 +135,74 @@ Sends http POST or GET request and returns the response.
 
 <br> 
 
+## JSON Converter _(Class)_
+Tools for using JSON with VBA.
+
+_VBA-JSON v2.3.1 - (c) Tim Hall - https://github.com/VBA-tools/VBA-JSON_
+
+_JSONLib - Copyright (c) 2013, Ryo Yokoyama http://code.google.com/p/vba-json/_
+
+_VBA-UTC v1.0.6 - (c) Tim Hall - https://github.com/VBA-tools/VBA-UtcConverter_
+
+<br> 
+
+### Convert to ISO
+Convert local date to ISO 8601 string.
+
+**Input**:  `Date` UTC Local Date
+<br> 
+**Output**: `String` ISO Date
+
+<br> 
+
+### Convert to JSON
+Convert dictionary, collection, or array to JSON.
+
+**Input**:
+1. `Variant` Dictionary, Collection, or Array to be converted
+2. `Variant` Whitespace - "Pretty" print json with given number of spaces per indentation (Integer) or given string
+3. `Long` Current indentation (Default: `0`)
+
+**Output**: `String` JSON
+
+<br> 
+
+### Convert to UTC
+Convert local date to UTC date.
+
+**Input**: `Date` Local Date
+<br> 
+**Output**: `Date` UTC Date
+
+<br> 
+
+### Parse ISO
+Parse ISO 8601 date string to local date.
+
+**Input**: `String` ISO date string
+<br> 
+**Output**: `Date` Local Date
+
+<br> 
+
+### Parse JSON
+Convert JSON to dictionary or collection.
+
+**Input**: `String` JSON
+<br> 
+**Output**: `Object` Dictionary or Collection
+
+<br> 
+
+### Parse UTC
+Parse UTC date to local date.
+
+**Input**: `Date` UTC Date
+<br> 
+**Output**: `Date` Local Date
+
+<br> 
+
 ## Lock All Sheets _(Sub-Routine)_
 Locks or unlocks all sheets, unless a sheet is provided then only that sheet will be locked or unlocked.
 
