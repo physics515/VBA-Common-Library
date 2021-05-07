@@ -27,7 +27,7 @@ Function httpRequest(url As String, Optional post as Boolean) As String
                 'open request and assign headers
                 With hReq
                         .Open httpType, url, False
-                        .SetRequestHeader "Authorization", "Basic " & common.Base64Encode("apiKeys")
+                        .SetRequestHeader "Authorization", "Basic " & common.Base64Encode(apiKeys)
                         .Send
                 End With
                 
