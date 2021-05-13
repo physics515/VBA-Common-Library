@@ -12,5 +12,5 @@ Function getColumnLetter(columnNumber As Long) As String
         ColumnLetter = Split(Cells(1, columnNumber).Address, "$")(1)
 
         'return
-        Col_Letter = ColumnLetter
+        getColumnLetter = ColumnLetter
 End Function
