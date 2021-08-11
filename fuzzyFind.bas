@@ -19,7 +19,7 @@
 
 'recieves input of
 '       query (ex. "foo") as string
-'       searchRange (ex. Range(A1:B5)) range
+'       searchRange (ex. Range(A1:B5)) as range
 '       searchSheet (ex. wb.Sheets("Sheet 1")) as worksheet
 
 '       optional caseSensitive (ex. False) as caseSensitivity: default = 2
@@ -28,11 +28,11 @@
 '       *** Array must contain exactly nine elements or it will be reverted to default.
 '       *** The Lbound base is not relevant.
 
-'       optional tverskySymmetry ex. True) as boolean: default = false
+'       optional tverskySymmetry (ex. True) as boolean: default = false
 '       *** Determines the symetry of the tversky algorithm.
 
 '       optional tverskyWeights (ex. Array(1, 2)) as variant: default = Array(1, 1)
-'       *** Controls the weights of each side of the tversky algorithim.
+'       *** Controls the weights of each side of the tversky algorithm.
 '       *** Array must contain exactly two elements or it will be reverted to default.
 '       *** LBound base is not relevant.
 
@@ -41,7 +41,7 @@
 
 
 ''' From the Author '''
-'@Description: Configurable fuzzy find algorithim for string matching.
+'@Description: Configurable fuzzy find algorithm for string matching.
 '@Author: Justin Icenhour
 '@Version: 1.0.0
 '@License: GPL-3.0
