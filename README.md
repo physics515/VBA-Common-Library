@@ -52,6 +52,10 @@ Count the number of items in an array that contain a value.
 ## Damerau-Levenshtein Distance (String Metric)
 This function takes two strings of any length and calculates the Damerau-Levenshtein Distance between them. Damerau-Levenshtein Distance differs from Levenshtein Distance in that it includes an additional operation, called Transpositions, which occurs when two adjacent characters are swapped. Thus, Damerau-Levenshtein Distance calculates the number of Insertions, Deletions, Substitutions, and Transpositons needed to convert string1 into string2. As a result, this function is good when it is likely that spelling errors have occured between two string where the error is simply a transposition of 2 adjacent characters.
 
+**Author**: Anthony Mancini, https://github.com/x-vba/xlib
+
+**Modified By**: Justin Icenhour, 2021
+
 **Required Types**:
 1. `common.CaseSensitivity`
 
@@ -170,6 +174,10 @@ Returns the column letter for specified column number.
 ## Hamming Distance (String Metric)
 This function takes two strings of the same length and calculates the Hamming Distance between them. Hamming Distance measures how close two strings are by checking how many Substitutions are needed to turn one string into the other. Lower numbers mean the strings are closer than high numbers.
 
+**Author**: Anthony Mancini, https://github.com/x-vba/xlib
+
+**Modified By**: Justin Icenhour, 2021
+
 **Required Types**:
 1. `common.CaseSensitivity`
 
@@ -199,6 +207,8 @@ Sends http POST or GET request and returns the response.
 ## Jaccard Similarity Coefficient (String Metric)
 Calculate the Jaccard Similarity Coefficient.
 
+**Inspired By**: DigitecGalaxus, `C#`, https://github.com/DigitecGalaxus/Jaccard
+
 **Required Types**:
 1. `common.CaseSensitivity`
 
@@ -212,8 +222,9 @@ Calculate the Jaccard Similarity Coefficient.
 <br> 
 
 ## Jaro-Winkler Distance (String Metric)
-
 Calculate the Jaro-Winkler distance.
+
+**Inspired By**: jordanthomas, `Javascript`, https://github.com/jordanthomas/jaro-winkler
 
 **Required Types**:
 1. `common.CaseSensitivity`
@@ -298,6 +309,10 @@ Parse UTC date to local date.
 ## Levenshtein Distance (String Metric)
 This function takes two strings of any length and calculates the Levenshtein Distance between them. Levenshtein Distance measures how close two strings are by checking how many Insertions, Deletions, or Substitutions are needed to turn one string into the other. Lower numbers mean the strings are closer than high numbers. Unlike Hamming Distance, Levenshtein Distance works for strings of any length and includes 2 more operations. However, calculation time will be slower than Hamming Distance for same length strings, so if you know the two strings are the same length, its preferred to use Hamming Distance.
 
+**Author**: Anthony Mancini, https://github.com/x-vba/xlib
+
+**Modified By**: Justin Icenhour, 2021
+
 **Required Types**:
 1. `common.CaseSensitivity`
 
@@ -325,7 +340,9 @@ Locks or unlocks all sheets, unless a sheet is provided then only that sheet wil
 <br> 
 
 ## Maximum Value In An Array (max)
-This function takes multiple numbers or multiple arrays of numbers and returns the max number. This function also accounts for numbers that are formatted as strings by converting them into numbers.
+This function takes multiple numbers or multiple arrays of numbers and returns the max number. This function also accounts for numbers that are formatted as strings by converting them into numbers. 
+
+**Author**: Anthony Mancini, https://github.com/x-vba/xlib
 
 **Input**: `Variant` Numbers _(ex. Array(1, 3, 5, 5, 9, 9.5))_
 
@@ -335,6 +352,8 @@ This function takes multiple numbers or multiple arrays of numbers and returns t
 
 ## Minimum Value In An Array (min)
 This function takes multiple numbers or multiple arrays of numbers and returns the min number. This function also accounts for numbers that are formatted as strings by converting them into numbers.
+
+**Author**: Anthony Mancini, https://github.com/x-vba/xlib
 
 **Input**: `Variant` Numbers _(ex. Array(.5, 1, 3, 5, 5, 9, 9.5))_
 
@@ -431,6 +450,8 @@ Calculate the simple matching metric.
 ## Sorensen-Dice Distance (String Metric)
 Get the edit-distance according to Dice between two values.
 
+**Inspired By:** words, `Javascript`, https://github.com/words/dice-coefficient
+
 **Required Types**:
 1. `common.CaseSensitivity`
 
@@ -522,6 +543,8 @@ Converts any two-digit number to text.
 
 ## Tversky Index (String Metric)
 Computes the Tversky index between two sequences. For alpha = beta = 0.5, the index is equal to Dice's coefficient. For alpha = beta = 1, the index is equal to the Tanimoto coefficient.
+
+**Inspired By:** compute-io, `Javascript`, https://github.com/compute-io/tversky-index
 
 **Required Types**:
 1. `common.CaseSensitivity`
