@@ -68,6 +68,7 @@ This function takes two strings of any length and calculates the Damerau-Levensh
 2. `String` String2 _(ex. "bar")_
 3. `CaseSensitive` Case Sensitivity _(ex. CaseSensitive.Sensitive)_
 <br> 
+
 **Output**: `Integer` Distance _(ex. "5")_
 
 <br> 
@@ -77,6 +78,7 @@ Enable or disable events and screen updating on the application level.
 
 **Input**: `Boolean` Enable _(ex. True or False)_
 <br> 
+
 **Output**: `None`
 
 <br> 
@@ -190,6 +192,7 @@ This function takes two strings of the same length and calculates the Hamming Di
 2. `String` String2 _(ex. "bar")_
 3. `CaseSensitive` Case Sensitivity _(ex. CaseSensitive.Sensitive)_
 <br> 
+
 **Output**: `Integer` Distance _(ex. "5")_
 
 <br> 
@@ -391,7 +394,7 @@ String metric.
 1. `String` String1 _(ex. "foo")_
 2. `String` String2 _(ex. "bar")_
 3. `CaseSensitive` Case Sensitivity _(ex. CaseSensitive.Sensitive)_
-<br> 
+
 **Output**: `Double` Metric _(ex. ".5")_
 
 <br> 
@@ -466,7 +469,7 @@ Get the edit-distance according to Dice between two values.
 1. `String` String1 _(ex. "foo")_
 2. `String` String2 _(ex. "bar")_
 3. `CaseSensitive` Case Sensitivity _(ex. CaseSensitive.Sensitive)_
-<br> 
+
 **Output**: `Integer` Distance _(ex. "5")_
 
 <br> 
