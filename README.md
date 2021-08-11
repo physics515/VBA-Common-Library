@@ -24,6 +24,7 @@ Decodes binary to string. _2003 Antonin Foller, http://www.motobit.com_
 
 **Input**: `Variant` as bianary data (ex. VT_UI1 | VT_ARRAY)
 <br> 
+
 **Output**: `String`
 
 <br> 
