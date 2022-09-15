@@ -18,7 +18,7 @@ Function base64Encode(input as String) As String
         oNode.nodeTypedValue = Stream_StringToBinary(sText)
 
         'return
-        Base64Encode = oNode.Text
+        Base64Encode = Replace(oNode.Text, vbLf, "")
         
         'garbage collection
         Set oNode = Nothing
