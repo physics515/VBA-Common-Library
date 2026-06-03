@@ -42,12 +42,16 @@ Converts range or named range to delimited lists.
 
 <br> 
 
-## Count Non-Blank Array Items
-Count the number of items in an array that contain a value.
+## Count Array Elements
+Counts the elements of an array. Returns an integer array containing the requested counts in order: [nonBlanks, blanks, total].
 
-**Input**: `Variant` Array _(ex. [1,2, ,4])_
-<br> 
-**Output**: `Integer` (ex. 3)
+**Input**:
+1. `Variant` Array _(ex. [1,2, ,4])_
+2. `Boolean` Non-Blanks _(ex. `True` or `False`)_
+3. `Boolean` Blanks _(ex. `True` or `False`)_
+4. `Boolean` Total _(ex. `True` or `False`)_
+
+**Output**: `Long` Array _(ex. [3, 1, 4])_
 
 <br> 
 
