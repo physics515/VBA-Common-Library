@@ -133,7 +133,7 @@ Finds queried value in a specified row and returns the column number where the q
 **Input**:
 1. `Worksheet` Search Worksheet _(ex. ThisWorkbook.Sheets("Sheet 1"))_
 2. `String` Search Term _(ex. "foo")_
-3. `String` Search Row _(ex. "1:1")_
+3. `Range` Search Row _(ex. Range("1:1"))_
 
 **Output**: `Integer` Column Number
 
