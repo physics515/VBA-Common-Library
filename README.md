@@ -118,7 +118,7 @@ Finds queried value in a specified column and returns the row number where the q
 **Input**: 
 1. `Worksheet` Search Worksheet _(ex. ThisWorkbook.Sheets("Sheet 1"))_
 2. `String` Search Term _(ex. "foo")_
-3. `String` Search Column _(ex. "A:A")_
+3. `Range` Search Column _(ex. Range("A:A"))_
 
 **Output**: `Integer` Row Number
 
