@@ -315,6 +315,20 @@ Parse UTC date to local date.
 
 <br> 
 
+## Last Row
+Returns the last used row number for a given column.
+
+**Required Functions**:
+1. `common.getColumnLetter`
+
+**Input**:
+1. `String` Worksheet Name _(ex. "Sheet 1")_
+2. `String` Search Column _(ex. "A:A")_
+
+**Output**: `Long` Last Row Number
+
+<br> 
+
 ## Levenshtein Distance (String Metric)
 This function takes two strings of any length and calculates the Levenshtein Distance between them. Levenshtein Distance measures how close two strings are by checking how many Insertions, Deletions, or Substitutions are needed to turn one string into the other. Lower numbers mean the strings are closer than high numbers. Unlike Hamming Distance, Levenshtein Distance works for strings of any length and includes 2 more operations. However, calculation time will be slower than Hamming Distance for same length strings, so if you know the two strings are the same length, its preferred to use Hamming Distance.
 
