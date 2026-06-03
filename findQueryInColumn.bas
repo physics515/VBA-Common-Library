@@ -3,20 +3,19 @@
 '''''''''''''''''''''''''''''''''''''''''''''''
 ' *** Requires Function "getColumnLetter" ***
 
-'recieves input of worksheet (ex. "Sheet 1"), search term (ex. "foo"), and range (ex. Range("A:A")) as range
+'receives input of worksheet (ex. ThisWorkbook.Sheets("Sheet 1")), search term (ex. "foo"), and range (ex. Range("A:A")) as range
 'outputs row number as integer
 
-Function findQueryInColumn(searchWroksheet As String, searchTerm As Variant, searchColumn As Range) As Integer
+Function findQueryInColumn(searchWorksheet As Worksheet, searchTerm As Variant, searchColumn As Range) As Integer
 
         '''method 1
         'dimension variables
-        Dim wb As Workbook: Set wb = ThisWorkbook
-        Dim ws As Worksheet: Set ws = wb.Sheets(searchWroksheet)
+        Dim ws As Worksheet: Set ws = searchWorksheet
         Dim foundRow As Integer
 
         'find the search term within the search range
         Dim searchColumnLastCell As Range: Set searchColumnLastCell = searchColumn.Cells(searchColumn.Cells.Count)
-        Dim foundSearchTerm As range: Set foundSearchTerm = searchColumn.Find(what:=searchTerm, after:=searchColumnLastCell, LookIn:=xlValues, LookAt:=xlWhole, SearchOrder:=xlByRows, MatchCase:=False)
+        Dim foundSearchTerm As Range: Set foundSearchTerm = searchColumn.Find(what:=searchTerm, after:=searchColumnLastCell, LookIn:=xlValues, LookAt:=xlWhole, SearchOrder:=xlByRows, MatchCase:=False)
 
         'if search term is found return row number
         'else try method 2

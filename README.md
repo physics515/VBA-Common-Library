@@ -95,7 +95,7 @@ Finds queried value in a specified column and returns the row number where the q
 1. `common.getColumnLetter`
 
 **Input**: 
-1. `String` Search Worksheet Name _(ex. "Sheet 1")_
+1. `Worksheet` Search Worksheet _(ex. ThisWorkbook.Sheets("Sheet 1"))_
 2. `String` Search Term _(ex. "foo")_
 3. `Range` Search Column _(ex. Range("A:A"))_
 
@@ -110,7 +110,7 @@ Finds queried value in a specified row and returns the column number where the q
 1. `common.getColumnLetter`
 
 **Input**:
-1. `String` Search Worksheet Name _(ex. "Sheet 1")_
+1. `Worksheet` Search Worksheet _(ex. ThisWorkbook.Sheets("Sheet 1"))_
 2. `String` Search Term _(ex. "foo")_
 3. `String` Search Row _(ex. "1:1")_
 
@@ -312,6 +312,20 @@ Parse UTC date to local date.
 **Input**: `Date` UTC Date
 <br> 
 **Output**: `Date` Local Date
+
+<br> 
+
+## Last Row
+Returns the last used row number for a given column.
+
+**Required Functions**:
+1. `common.getColumnLetter`
+
+**Input**:
+1. `String` Worksheet Name _(ex. "Sheet 1")_
+2. `String` Search Column _(ex. "A:A")_
+
+**Output**: `Long` Last Row Number
 
 <br> 
 
