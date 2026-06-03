@@ -1,7 +1,7 @@
 '''''''''''''''''''''''''''''''''''''''''''''''
 ' Lock or Unlock Worksheets                   '
 '''''''''''''''''''''''''''''''''''''''''''''''
-'recieves an input of optional locked (ex. True) and an optional input of sheets (ex. Array(ThisWorkbook.Sheets("Sheet 1")))
+'receives an input of optional locked (ex. True) and an optional input of sheets (ex. Array(ThisWorkbook.Sheets("Sheet 1")))
 'locks or unlocks sheets based on locked input
 
 'this sub will only lock the user interface features of the worksheets so that they can continue to be manipulated by
