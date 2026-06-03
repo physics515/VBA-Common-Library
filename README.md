@@ -88,6 +88,27 @@ Enable or disable events and screen updating on the application level.
 
 <br> 
 
+## Find Query
+Finds a queried value in a specified range and returns the column and row where the query is found.
+
+**Required Functions** _(for search algorithms 4 and 5)_:
+1. `common.fuzzyFind`
+
+**Input**:
+1. `Worksheet` Search Worksheet _(ex. `ThisWorkbook.Sheets("Sheet 1")`)_
+2. `Range` Search Range _(ex. `ThisWorkbook.Sheets("Sheet 1").Range("A:A")`)_
+3. `String` Search Term _(ex. "foo")_
+4. Optional `Integer` Search Algorithm _(ex. `2`)_ - Default: `2`
+    - `1` Quick Search _(Uses Excel's built-in find function. Works quickly but does not always return the correct value.)_
+    - `2` Accurate Search _(Uses Excel's built-in find function. If no result is found, falls back to Brute Force Search. A middle ground for accuracy and speed.)_ **Default**
+    - `3` Brute Force Search _(Loops through every cell in the range and manually compares the values. Returns the first matched cell. Slow but always gets the job done.)_
+    - `4` Return Something Search _(Uses Accurate Search. If nothing is returned, falls back to Fuzzy Search.)_
+    - `5` Fuzzy Search _(Uses `common.fuzzyFind` to return the closest match cell.)_
+
+**Output**: `Variant` Integer Array _(ex. `[column, row]`)_. If nothing is found the function returns `[0, 0]`.
+
+<br>
+
 ## Find Query In Column
 Finds queried value in a specified column and returns the row number where the query is found.
 
