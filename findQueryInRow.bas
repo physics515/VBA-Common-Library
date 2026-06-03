@@ -3,15 +3,14 @@
 '''''''''''''''''''''''''''''''''''''''''''''''
 ' *** Requires Function "getColumnLetter" ***
 
-'recieves input of worksheet (ex. "Sheet 1"), search term (ex. "foo"), and range (ex. "1:1") as string
+'receives input of worksheet, search term (ex. "foo"), and range (ex. "1:1") as string
 'outputs column number as integer
 
-Function findQueryInRow(searchWorksheet As String, searchTerm As Variant, searchRow As String) As Integer
+Function findQueryInRow(searchWorksheet As Worksheet, searchTerm As Variant, searchRow As String) As Integer
 
         '''method 1
         'dimension variables
-        Dim wb As Workbook: Set wb = ThisWorkbook
-        Dim ws As Worksheet: Set ws = wb.Sheets(searchWorksheet)
+        Dim ws As Worksheet: Set ws = searchWorksheet
         Dim foundCol As Integer
         
         'find the search term within the search range
