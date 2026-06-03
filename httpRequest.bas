@@ -1,8 +1,8 @@
 '''''''''''''''''''''''''''''''''''''''''''''''
 ' Http Request                                '
 '''''''''''''''''''''''''''''''''''''''''''''''
-'recieves url as string, optional request method (or legacy post boolean), and optional request body
-'outputs the http resonse
+'receives url as string, optional request method (or legacy post boolean), and optional request body
+'outputs the http response
 
 'this function defaults to a GET request unless a supported request method is provided
 
