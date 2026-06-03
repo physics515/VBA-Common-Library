@@ -163,7 +163,7 @@ Finds specified column header on specified sheet and enters a list of printers a
 2. `common.getColumnLetter`
 
 **Input**:
-1. `String` Destination Sheet _(ex. "Sheet 1")_
+1. `Worksheet` Destination Sheet _(ex. `ThisWorkbook.Sheets("Sheet 1")`)_
 2. `String` Destination Column Header _(ex. "Printer List")_
 
 **Output**: `None`
