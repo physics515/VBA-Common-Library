@@ -1,12 +1,12 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
 ' Convert (Named)Range to Delimited List      '
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
-'recieves input as workSheetName (ex. "Sheet 1") as string, rangeName (ex. "A1:B5" or "clientNames") as string, and delimitor (ex. ";" or ", ") as string
-'outputs a string of all values in the range separated by a delimitor
+'receives input as workSheetName (ex. "Sheet 1") as string, rangeName (ex. "A1:B5" or "clientNames") as string, delimitor (ex. ";" or ", ") as string, and optional removeFinalDelimiter as boolean
+'outputs a string of all values in the range separated by a delimitor, with optional removal of the trailing delimitor
 
 Function convertRangeToDelimitedLists(workSheetName As String, rangeName As String, delimitor As String, Optional removeFinalDelimiter As Boolean = False) As String
 
-        'diminsion variables
+        'dimension variables
         Dim rng As range
         Dim cell As range
         Dim lst As String
@@ -21,7 +21,7 @@ Function convertRangeToDelimitedLists(workSheetName As String, rangeName As Stri
                 lst = lst & cell.Value & delimitor
         Next cell
         
-        If removeFinalDelimiter And Len(delimitor) > 0 Then
+        If removeFinalDelimiter And Len(delimitor) > 0 And Len(lst) >= Len(delimitor) Then
                 If Right$(lst, Len(delimitor)) = delimitor Then
                         lst = Left$(lst, Len(lst) - Len(delimitor))
                 End If
