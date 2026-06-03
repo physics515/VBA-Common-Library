@@ -3,10 +3,10 @@
 '''''''''''''''''''''''''''''''''''''''''''''''
 ' *** Requires Function "getColumnLetter" ***
 
-'receives input of worksheet, search term (ex. "foo"), and range (ex. "1:1") as string
+'receives input of worksheet (ex. ThisWorkbook.Sheets("Sheet 1")), search term (ex. "foo"), and range (ex. Range("1:1")) as Range
 'outputs column number as integer
 
-Function findQueryInRow(searchWorksheet As Worksheet, searchTerm As Variant, searchRow As String) As Integer
+Function findQueryInRow(searchWorksheet As Worksheet, searchTerm As Variant, searchRow As Range) As Integer
 
         '''method 1
         'dimension variables
@@ -14,7 +14,7 @@ Function findQueryInRow(searchWorksheet As Worksheet, searchTerm As Variant, sea
         Dim foundCol As Integer
         
         'find the search term within the search range
-        Dim foundSearchTerm As range: Set foundSearchTerm = ws.range(searchRow).Find(what:=searchTerm, LookIn:=xlValues, LookAt:=xlWhole, SearchOrder:=xlByRows, MatchCase:=False)
+        Dim foundSearchTerm As range: Set foundSearchTerm = searchRow.Find(what:=searchTerm, LookIn:=xlValues, LookAt:=xlWhole, SearchOrder:=xlByRows, MatchCase:=False)
 
         'if search term is found return row number
         'else try method 2
@@ -29,15 +29,15 @@ Function findQueryInRow(searchWorksheet As Worksheet, searchTerm As Variant, sea
                 'dimension variables
 
                 'find the column letter of the last column in the search row
-                Dim searchRowLastColumnLetter As String: searchRowLastColumnLetter = common.getColumnLetter(ws.range(common.getColumnLetter(Columns.count) & ws.range(searchRow).row).End(xlToLeft).Column)
+                Dim searchRowLastColumnLetter As String: searchRowLastColumnLetter = common.getColumnLetter(ws.range(common.getColumnLetter(Columns.count) & searchRow.row).End(xlToLeft).Column)
 
                 'find the last row in the search search row
-                Dim searchRowLastRow As String: searchRowLastRow = ws.range(searchRow).row
+                Dim searchRowLastRow As String: searchRowLastRow = searchRow.row
 
                 'find the last cell in the search row
                 Dim searchRowLastCell As range: Set searchRowLastCell = ws.range(searchRowLastColumnLetter & searchRowLastRow)
         
-                Dim row As Integer: row = ws.range(searchRow).row
+                Dim row As Integer: row = searchRow.row
                 Dim i As Long
                 Dim foundMatch As Boolean: foundMatch = False
                 Dim compare As String

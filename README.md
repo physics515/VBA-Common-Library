@@ -88,6 +88,27 @@ Enable or disable events and screen updating on the application level.
 
 <br> 
 
+## Find Query
+Finds a queried value in a specified range and returns the column and row where the query is found.
+
+**Required Functions** _(for search algorithms 4 and 5)_:
+1. `common.fuzzyFind`
+
+**Input**:
+1. `Worksheet` Search Worksheet _(ex. `ThisWorkbook.Sheets("Sheet 1")`)_
+2. `Range` Search Range _(ex. `ThisWorkbook.Sheets("Sheet 1").Range("A:A")`)_
+3. `String` Search Term _(ex. "foo")_
+4. Optional `Integer` Search Algorithm _(ex. `2`)_ - Default: `2`
+    - `1` Quick Search _(Uses Excel's built-in find function. Works quickly but does not always return the correct value.)_
+    - `2` Accurate Search _(Uses Excel's built-in find function. If no result is found, falls back to Brute Force Search. A middle ground for accuracy and speed.)_ **Default**
+    - `3` Brute Force Search _(Loops through every cell in the range and manually compares the values. Returns the first matched cell. Slow but always gets the job done.)_
+    - `4` Return Something Search _(Uses Accurate Search. If nothing is returned, falls back to Fuzzy Search.)_
+    - `5` Fuzzy Search _(Uses `common.fuzzyFind` to return the closest match cell.)_
+
+**Output**: `Variant` Integer Array _(ex. `[column, row]`)_. If nothing is found the function returns `[0, 0]`.
+
+<br>
+
 ## Find Query In Column
 Finds queried value in a specified column and returns the row number where the query is found.
 
@@ -95,9 +116,9 @@ Finds queried value in a specified column and returns the row number where the q
 1. `common.getColumnLetter`
 
 **Input**: 
-1. `String` Search Worksheet Name _(ex. "Sheet 1")_
+1. `Worksheet` Search Worksheet _(ex. ThisWorkbook.Sheets("Sheet 1"))_
 2. `String` Search Term _(ex. "foo")_
-3. `String` Search Column _(ex. "A:A")_
+3. `Range` Search Column _(ex. Range("A:A"))_
 
 **Output**: `Integer` Row Number
 
@@ -110,9 +131,9 @@ Finds queried value in a specified row and returns the column number where the q
 1. `common.getColumnLetter`
 
 **Input**:
-1. `Worksheet` Search Worksheet _(ex. Sheet1)_
+1. `Worksheet` Search Worksheet _(ex. ThisWorkbook.Sheets("Sheet 1"))_
 2. `String` Search Term _(ex. "foo")_
-3. `String` Search Row _(ex. "1:1")_
+3. `Range` Search Row _(ex. Range("1:1"))_
 
 **Output**: `Integer` Column Number
 
@@ -163,7 +184,7 @@ Finds specified column header on specified sheet and enters a list of printers a
 2. `common.getColumnLetter`
 
 **Input**:
-1. `String` Destination Sheet _(ex. "Sheet 1")_
+1. `Worksheet` Destination Sheet _(ex. `ThisWorkbook.Sheets("Sheet 1")`)_
 2. `String` Destination Column Header _(ex. "Printer List")_
 
 **Output**: `None`
@@ -203,13 +224,14 @@ This function takes two strings of the same length and calculates the Hamming Di
 <br> 
 
 ## HTTP Request
-Sends http POST or GET request and returns the response.
+Sends an HTTP request and returns the response.
 
 **Input**:
 1. `String` URL _(ex. "https://api.insightly.com/v3.1/Contacts/")_
-2. `Boolean` Post _(ex. `True` or `False`)_  - Optional
+2. Optional `Variant` Request Method _(ex. `"GET"`, `"HEAD"`, `"POST"`, `"PUT"`, `"DELETE"`, `"CONNECT"`, `"OPTIONS"`, `"TRACE"`, `"PATCH"` or legacy `True`/`False` for POST/GET)_
+3. Optional `Variant` Request Body _(ex. `"{""name"":""value""}"` or `"foo=bar"`)_
 
-**Output**: `String` HTTP Response
+**Output**: `String` HTTP Response body _(HEAD requests return response headers)_
 
 <br> 
 
@@ -315,6 +337,20 @@ Parse UTC date to local date.
 
 <br> 
 
+## Last Row
+Returns the last used row number for a given column.
+
+**Required Functions**:
+1. `common.getColumnLetter`
+
+**Input**:
+1. `String` Worksheet Name _(ex. "Sheet 1")_
+2. `String` Search Column _(ex. "A:A")_
+
+**Output**: `Long` Last Row Number
+
+<br> 
+
 ## Levenshtein Distance (String Metric)
 This function takes two strings of any length and calculates the Levenshtein Distance between them. Levenshtein Distance measures how close two strings are by checking how many Insertions, Deletions, or Substitutions are needed to turn one string into the other. Lower numbers mean the strings are closer than high numbers. Unlike Hamming Distance, Levenshtein Distance works for strings of any length and includes 2 more operations. However, calculation time will be slower than Hamming Distance for same length strings, so if you know the two strings are the same length, its preferred to use Hamming Distance.
 
@@ -337,12 +373,12 @@ This function takes two strings of any length and calculates the Levenshtein Dis
 
 <br> 
 
-## Lock All Sheets _(Sub-Routine)_
-Locks or unlocks all sheets, unless a sheet is provided then only that sheet will be locked or unlocked.
+## Lock Sheets _(Sub-Routine)_
+Locks or unlocks all sheets by default, or only the supplied sheets when an array of sheet objects is provided.
 
 **Input**:
 1. `Boolean` Locked _(ex. `True` or `False`)_
-2. `Worksheet` Single Sheet
+2. `Array` Sheets _(ex. `Array(ThisWorkbook.Sheets("Sheet 1"), ThisWorkbook.Sheets("Sheet 2"))`)_
 
 **Output**: `None`
 

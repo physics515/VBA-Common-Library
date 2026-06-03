@@ -4,14 +4,14 @@
 ' *** Requires Function "findQueryInRow" ***
 ' *** Requires Function "getColumnLetter" ***
 
-'recieves an input of where the list should be saved in the form of desinationSheet (ex. "Sheet 1") as string, and destinationColumnHeader (ex. "Printer List") as string.
+'receives an input of where the list should be saved in the form of destinationSheet (ex. ThisWorkbook.Sheets("Sheet 1")) as Worksheet, and destinationColumnHeader (ex. "Printer List") as string.
 'outputs a list of currently connected printers to an excel column based on the sheet name an the column header
 
-Sub generateRangeOfAvailablePrinters(destinationSheet As String, destinationColumnHeader as String)
+Sub generateRangeOfAvailablePrinters(destinationSheet As Worksheet, destinationColumnHeader as String)
 
         'dimension variables
         Dim wb As Workbook: Set wb = ThisWorkbook
-        Dim ws As Worksheet: Set ws = wb.Sheets(destinationSheet)
+        Dim ws As Worksheet: Set ws = destinationSheet
         Dim printers() As String
         Dim i As Integer: i = 1
 
@@ -38,6 +38,6 @@ Sub generateRangeOfAvailablePrinters(destinationSheet As String, destinationColu
         For i = 1 To UBound(printers)
         
                 'copy current of printer array to destination
-                ws.range(common.getColumnLetter(common.findQueryInRow(destinationSheet, destinationColumnHeader, "1:1")) & i + 1).Value = printers(i)
+                ws.range(common.getColumnLetter(common.findQueryInRow(destinationSheet.Name, destinationColumnHeader, "1:1")) & i + 1).Value = printers(i)
         Next i
 End Sub
