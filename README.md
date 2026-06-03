@@ -337,12 +337,12 @@ This function takes two strings of any length and calculates the Levenshtein Dis
 
 <br> 
 
-## Lock All Sheets _(Sub-Routine)_
-Locks or unlocks all sheets, unless a sheet is provided then only that sheet will be locked or unlocked.
+## Lock Sheets _(Sub-Routine)_
+Locks or unlocks all sheets by default, or only the supplied sheets when an array of sheet objects is provided.
 
 **Input**:
 1. `Boolean` Locked _(ex. `True` or `False`)_
-2. `Worksheet` Single Sheet
+2. `Array` Sheets _(ex. `Array(ThisWorkbook.Sheets("Sheet 1"), ThisWorkbook.Sheets("Sheet 2"))`)_
 
 **Output**: `None`
 
