@@ -203,13 +203,14 @@ This function takes two strings of the same length and calculates the Hamming Di
 <br> 
 
 ## HTTP Request
-Sends http POST or GET request and returns the response.
+Sends an HTTP request and returns the response.
 
 **Input**:
 1. `String` URL _(ex. "https://api.insightly.com/v3.1/Contacts/")_
-2. `Boolean` Post _(ex. `True` or `False`)_  - Optional
+2. Optional `Variant` Request Method _(ex. `"GET"`, `"HEAD"`, `"POST"`, `"PUT"`, `"DELETE"`, `"CONNECT"`, `"OPTIONS"`, `"TRACE"`, `"PATCH"` or legacy `True`/`False` for POST/GET)_
+3. Optional `Variant` Request Body _(ex. `"{""name"":""value""}"` or `"foo=bar"`)_
 
-**Output**: `String` HTTP Response
+**Output**: `String` HTTP Response body _(HEAD requests return response headers)_
 
 <br> 
 
